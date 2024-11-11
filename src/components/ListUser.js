@@ -19,6 +19,9 @@ function ListUser() {
 
     }
 
+    function update(id){
+        window.location.href= "/update-user/"+id
+    }
     useEffect(() => {
         listUser()
     }, []);
@@ -39,7 +42,7 @@ function ListUser() {
                             <th>{user.id}</th>
                             <th>{user.name}</th>
                             <th>{user.cpf_cnpj}</th>
-                            <input type='button' value="Atualizar"  />
+                            <input type='button' value="Atualizar" onClick={()=> update(user.id)} />
                         </tr>
                     ))}
                 </tbody>
